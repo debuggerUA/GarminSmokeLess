@@ -1,10 +1,13 @@
 # Garmin Connect IQ / Monkey C Build Outputs
 bin/
+gen/
+mir/
+internal-mir/
 *.prg
 *.iq
 *.debug
 *.xml.debug
-mir/
+*.prg.debug.xml
 
 # VS Code Connect IQ Extension
 .vscode/project.json
@@ -28,3 +31,6 @@ ehthumbs.db
 *.log
 *.tmp
 *.bak
+
+# Claude Code local settings (contains secrets, e.g. LiteLLM key)
+.claude/settings.local.json
