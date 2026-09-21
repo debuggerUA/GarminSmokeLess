@@ -1,0 +1,43 @@
+{
+  "settings" : [ {
+    "key" : "MaxDailyCigs",
+    "valueType" : "number",
+    "defaultValue" : 10,
+    "configTitle" : "MaxDailyTitle",
+    "configPrompt" : null,
+    "configType" : "numeric",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : 1,
+    "configMax" : 100,
+    "configMaxLength" : null
+  }, {
+    "key" : "CooldownMinutes",
+    "valueType" : "number",
+    "defaultValue" : 90,
+    "configTitle" : "CooldownTitle",
+    "configPrompt" : null,
+    "configType" : "numeric",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : 1,
+    "configMax" : 1440,
+    "configMaxLength" : null
+  } ],
+  "supportsLiveValidation" : false,
+  "languages" : {
+    "valyrian" : {
+      "ComplicationLongLabel" : "Cigarettes Today",
+      "ComplicationShortLabel" : "Cigs",
+      "CooldownTitle" : "Cooldown Period (Minutes)",
+      "MaxDailyTitle" : "Max Cigarettes Per Day",
+      "AppName" : "Smoke Less"
+    }
+  }
+}
