@@ -1,55 +1,36 @@
-# Prerequisites
-*.d
+# Garmin Connect IQ / Monkey C Build Outputs
+bin/
+gen/
+mir/
+internal-mir/
+*.prg
+*.iq
+*.debug
+*.xml.debug
+*.prg.debug.xml
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# VS Code Connect IQ Extension
+.vscode/project.json
+*.json.debug
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Eclipse / Monkey C IDE Project Files
+.project
+.classpath
+.settings/
 
-# Precompiled Headers
-*.gch
-*.pch
+# IntelliJ / Android Studio (if used for editing)
+.idea/
+*.iml
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# System & OS Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Temporary Files & Logs
+*.log
+*.tmp
+*.bak
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-
-# debug information files
-*.dwo
+# Claude Code local settings (contains secrets, e.g. LiteLLM key)
+.claude/settings.local.json
