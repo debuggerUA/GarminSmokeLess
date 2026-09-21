@@ -34,3 +34,9 @@ ehthumbs.db
 
 # Claude Code local settings (contains secrets, e.g. LiteLLM key)
 .claude/settings.local.json
+
+# Machine-local build config (SDK path, signing key) — see .build.local.env.example
+.build.local.env
+
+# Connect IQ developer signing key — never commit, it's a secret
+developer_key

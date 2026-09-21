@@ -36,7 +36,7 @@ class GarminSmokeLessApp extends Application.AppBase {
 
     // Glance view (for the widget list)
     (:glance)
-    function getGlanceView() as [Views] or [Views, InputDelegates] {
+    function getGlanceView() as [ WatchUi.GlanceView ] or [ WatchUi.GlanceView, WatchUi.GlanceViewDelegate ] or Null {
         return [ new GarminSmokeLessGlanceView() ];
     }
 

@@ -1,0 +1,24 @@
+{
+  "complications" : [ {
+    "ciqId" : {
+      "id" : 0,
+      "devicePartNumber" : "006-B3906-00"
+    },
+    "icon" : "9480d35e.png",
+    "title" : "ComplicationLongLabel",
+    "defaultLayoutId" : 0,
+    "layouts" : [ {
+      "id" : 0,
+      "iconContent" : "9480d35e.svg",
+      "iconPosition" : "left",
+      "textDefault" : "AppName",
+      "textPosition" : "right"
+    } ]
+  } ],
+  "strings" : {
+    "default" : {
+      "ComplicationLongLabel" : "Cigarettes Today",
+      "AppName" : "Smoke Less"
+    }
+  }
+}
