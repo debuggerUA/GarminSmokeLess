@@ -1,0 +1,9 @@
+<settings>
+    <setting propertyKey="@Properties.MaxDailyCigs" title="@Strings.MaxDailyTitle">
+        <settingConfig type="numeric" min="1" max="100" />
+    </setting>
+
+    <setting propertyKey="@Properties.CooldownMinutes" title="@Strings.CooldownTitle">
+        <settingConfig type="numeric" min="1" max="1440" />
+    </setting>
+</settings>

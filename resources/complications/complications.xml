@@ -1,0 +1,13 @@
+<complications xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <!--
+        id must stay stable across releases - other watch faces / Face It
+        reference it by this value (see SmokeLessTracker.COMPLICATION_ID).
+    -->
+    <complication id="0" access="public"
+                  longLabel="@Strings.ComplicationLongLabel"
+                  shortLabel="@Strings.ComplicationShortLabel"
+                  icon="@Drawables.LauncherIcon"
+                  glancePreview="true">
+        <faceIt defaultText="@Strings.AppName"/>
+    </complication>
+</complications>

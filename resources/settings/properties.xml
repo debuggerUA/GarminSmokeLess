@@ -1,0 +1,5 @@
+<properties>
+    <!-- Property ID, Default Value, Type -->
+    <property id="MaxDailyCigs" type="number">10</property>
+    <property id="CooldownMinutes" type="number">90</property>
+</properties>
