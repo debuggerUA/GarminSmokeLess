@@ -7,10 +7,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 GarminSmokeLess is a Garmin Connect IQ watch app (Monkey C) — a cigarette tracker with a cooldown timer. Target device is the `fenix7` (see `manifest.xml`); Connect IQ SDK v9.2.0, min API level 5.2.0.
 
 ## Build / run / test
-
-This is a Connect IQ project, normally built via the Monkey C VS Code extension (which drives the Connect IQ SDK's `monkeyc` compiler and `connectiq` simulator) rather than a CLI build script — there is no npm/make/gradle setup here.
-
-- Build/run: use the VS Code Connect IQ extension commands ("Monkey C: Build Current Project", "Monkey C: Run Current Project in Simulator"), or invoke the SDK's `monkeyc`/`monkeydo` binaries directly against `monkey.jungle` if the SDK is on `PATH`.
 - There is no automated test suite in this repo.
 - `bin/` and `gen/` are build output directories (gitignored); do not hand-edit generated files under them.
 - `manifest.xml` is a generated file (per its own header comment) — prefer editing it through the VS Code extension's "Monkey C: Edit ..." commands (products, permissions, languages, app attributes) rather than by hand, to keep it consistent with the SDK's expectations.
