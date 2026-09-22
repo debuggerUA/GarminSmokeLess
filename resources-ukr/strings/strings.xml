@@ -1,18 +1,18 @@
 <strings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
-    <string id="AppName">Менше Куріння</string>
-    <string id="MaxDailyTitle">Макс. Сигарет на День</string>
-    <string id="CooldownTitle">Період Очікування (Хвилини)</string>
+    <string id="AppName">Трекер сигарет</string>
+    <string id="MaxDailyTitle">Макс. сигарет на день</string>
+    <string id="CooldownTitle">Період очікування (хвилини)</string>
     <string id="SettingsTitle">Налаштування</string>
     <string id="CurrentValueLabel">Поточне</string>
     <string id="MinutesUnit">хв</string>
-    <string id="ComplicationLongLabel">Сигарет Сьогодні</string>
+    <string id="ComplicationLongLabel">Сигарет сьогодні</string>
     <string id="ComplicationShortLabel">Цигарки</string>
     <string id="StatusToday">Сьогодні: $1$ / $2$</string>
-    <string id="StatusReady">ГОТОВО</string>
+    <string id="StatusReady">Можна</string>
     <string id="CooldownLabel">Очікування:</string>
     <string id="InstructionText">Торкніться або натисніть START, щоб записати</string>
     <string id="SettingsInstructionText">Утримуйте UP для налаштувань</string>
-    <string id="GlanceReady">Готово</string>
+    <string id="GlanceReady">Можна</string>
     <string id="GlanceMinutesLeft">$1$ хв залишилось</string>
     <string id="GlanceCigsCount">Цигарки: $1$</string>
 </strings>
