@@ -1,4 +1,5 @@
 import Toybox.Graphics;
+import Toybox.Lang;
 import Toybox.WatchUi;
 
 (:glance)
@@ -12,13 +13,14 @@ class GarminSmokeLessGlanceView extends WatchUi.GlanceView {
         var count = SmokeLessTracker.getTodayCount();
         var remainingSeconds = SmokeLessTracker.getRemainingCooldownSeconds();
 
-        var statusText = "Ready";
+        var statusText = WatchUi.loadResource(Rez.Strings.GlanceReady) as String;
         if (remainingSeconds > 0) {
-            statusText = ((remainingSeconds / 60) + 1) + "m left";
+            statusText = Lang.format(WatchUi.loadResource(Rez.Strings.GlanceMinutesLeft) as String, [(remainingSeconds / 60) + 1]);
         }
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(0, 5, Graphics.FONT_GLANCE, "Cigs: " + count, Graphics.TEXT_JUSTIFY_LEFT);
+        var cigsText = Lang.format(WatchUi.loadResource(Rez.Strings.GlanceCigsCount) as String, [count]);
+        dc.drawText(0, 5, Graphics.FONT_GLANCE, cigsText, Graphics.TEXT_JUSTIFY_LEFT);
 
         dc.setColor(remainingSeconds > 0 ? Graphics.COLOR_YELLOW : Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
         dc.drawText(0, 25, Graphics.FONT_GLANCE, statusText, Graphics.TEXT_JUSTIFY_LEFT);
