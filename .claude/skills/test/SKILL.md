@@ -10,7 +10,7 @@ description: Use to run the unit test suite
 ```
 
 Builds with `monkeyc -t` (compiling in `(:test)`-annotated functions from
-`source/SmokeLessTrackerTest.mc`), launches the simulator if needed, and runs
+`source/test/SmokeLessTrackerTest.mc`), launches the simulator if needed, and runs
 `monkeydo -t` to execute them, printing PASS/ERROR per test plus a summary.
 
 Overridable via `.build.local.env` (gitignored, see `.build.local.env.example`):
