@@ -52,25 +52,26 @@ class GarminSmokeLessView extends WatchUi.View {
 
         // Today's count
         dc.setColor(count >= maxDaily ? Graphics.COLOR_RED : Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(dc.getWidth() / 2, 40, Graphics.FONT_MEDIUM, "Today: " + count + " / " + maxDaily, Graphics.TEXT_JUSTIFY_CENTER);
+        var statusText = Lang.format(WatchUi.loadResource(Rez.Strings.StatusToday) as String, [count, maxDaily]);
+        dc.drawText(dc.getWidth() / 2, 40, Graphics.FONT_MEDIUM, statusText, Graphics.TEXT_JUSTIFY_CENTER);
 
         // Cooldown status
         if (remainingSeconds <= 0) {
             dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2 - 10, Graphics.FONT_LARGE, "READY", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2 - 10, Graphics.FONT_LARGE, WatchUi.loadResource(Rez.Strings.StatusReady), Graphics.TEXT_JUSTIFY_CENTER);
         } else {
             var mins = remainingSeconds / 60;
             var secs = remainingSeconds % 60;
             var timeStr = Lang.format("$1$:$2$", [mins.format("%02d"), secs.format("%02d")]);
 
             dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2 - 20, Graphics.FONT_MEDIUM, "Cooldown:", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2 - 20, Graphics.FONT_MEDIUM, WatchUi.loadResource(Rez.Strings.CooldownLabel), Graphics.TEXT_JUSTIFY_CENTER);
             dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2 + 10, Graphics.FONT_NUMBER_MEDIUM, timeStr, Graphics.TEXT_JUSTIFY_CENTER);
         }
 
         // Instruction
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() - 45, Graphics.FONT_XTINY, "Tap or press START to log", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(dc.getWidth() / 2, dc.getHeight() - 45, Graphics.FONT_XTINY, WatchUi.loadResource(Rez.Strings.InstructionText), Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     //! Logs a cigarette and immediately redraws.

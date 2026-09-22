@@ -4,4 +4,11 @@
     <string id="CooldownTitle">Cooldown Period (Minutes)</string>
     <string id="ComplicationLongLabel">Cigarettes Today</string>
     <string id="ComplicationShortLabel">Cigs</string>
+    <string id="StatusToday">Today: $1$ / $2$</string>
+    <string id="StatusReady">READY</string>
+    <string id="CooldownLabel">Cooldown:</string>
+    <string id="InstructionText">Tap or press START to log</string>
+    <string id="GlanceReady">Ready</string>
+    <string id="GlanceMinutesLeft">$1$m left</string>
+    <string id="GlanceCigsCount">Cigs: $1$</string>
 </strings>

@@ -1,0 +1,14 @@
+<strings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <string id="AppName">Fuma Menos</string>
+    <string id="MaxDailyTitle">Máx. Cigarrillos al Día</string>
+    <string id="CooldownTitle">Periodo de Espera (Minutos)</string>
+    <string id="ComplicationLongLabel">Cigarrillos Hoy</string>
+    <string id="ComplicationShortLabel">Cigs</string>
+    <string id="StatusToday">Hoy: $1$ / $2$</string>
+    <string id="StatusReady">LISTO</string>
+    <string id="CooldownLabel">Espera:</string>
+    <string id="InstructionText">Toca o pulsa START para registrar</string>
+    <string id="GlanceReady">Listo</string>
+    <string id="GlanceMinutesLeft">$1$ min restantes</string>
+    <string id="GlanceCigsCount">Cigs: $1$</string>
+</strings>

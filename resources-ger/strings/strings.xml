@@ -1,0 +1,14 @@
+<strings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <string id="AppName">Weniger Rauchen</string>
+    <string id="MaxDailyTitle">Max. Zigaretten pro Tag</string>
+    <string id="CooldownTitle">Abklingzeit (Minuten)</string>
+    <string id="ComplicationLongLabel">Zigaretten Heute</string>
+    <string id="ComplicationShortLabel">Zig.</string>
+    <string id="StatusToday">Heute: $1$ / $2$</string>
+    <string id="StatusReady">BEREIT</string>
+    <string id="CooldownLabel">Abklingzeit:</string>
+    <string id="InstructionText">Tippen oder START drücken zum Erfassen</string>
+    <string id="GlanceReady">Bereit</string>
+    <string id="GlanceMinutesLeft">$1$ Min. übrig</string>
+    <string id="GlanceCigsCount">Zig.: $1$</string>
+</strings>
