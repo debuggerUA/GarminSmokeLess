@@ -21,6 +21,6 @@ class GarminSmokeLessGlanceView extends WatchUi.GlanceView {
         dc.drawText(0, 5, Graphics.FONT_GLANCE, "Cigs: " + count, Graphics.TEXT_JUSTIFY_LEFT);
 
         dc.setColor(remainingSeconds > 0 ? Graphics.COLOR_YELLOW : Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(0, 25, Graphics.FONT_GLANCE_NUMBER, statusText, Graphics.TEXT_JUSTIFY_LEFT);
+        dc.drawText(0, 25, Graphics.FONT_GLANCE, statusText, Graphics.TEXT_JUSTIFY_LEFT);
     }
 }
