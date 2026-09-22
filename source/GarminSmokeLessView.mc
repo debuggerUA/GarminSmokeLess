@@ -9,6 +9,7 @@ import Toybox.WatchUi;
 class GarminSmokeLessView extends WatchUi.View {
 
     private var _timer as Timer.Timer?;
+    private var _lastCooldownMinute as Number?;
 
     function initialize() {
         View.initialize();
@@ -16,6 +17,7 @@ class GarminSmokeLessView extends WatchUi.View {
 
     function onShow() as Void {
         // Refresh once a second so the cooldown timer ticks visibly.
+        _lastCooldownMinute = null;
         _timer = new Timer.Timer();
         _timer.start(method(:requestUpdate), 1000, true);
     }
@@ -28,6 +30,15 @@ class GarminSmokeLessView extends WatchUi.View {
     }
 
     function requestUpdate() as Void {
+        // Re-publish the complication whenever the cooldown crosses a minute
+        // mark, so other watch faces stay in sync while this view is open
+        // (the background service can't refresh that often on its own).
+        var minute = SmokeLessTracker.getRemainingCooldownSeconds() / 60;
+        if (!(minute == _lastCooldownMinute)) {
+            _lastCooldownMinute = minute;
+            SmokeLessTracker.publishComplication();
+        }
+
         WatchUi.requestUpdate();
     }
 
