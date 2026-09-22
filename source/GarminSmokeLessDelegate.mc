@@ -23,6 +23,15 @@ class GarminSmokeLessDelegate extends WatchUi.BehaviorDelegate {
         return true;
     }
 
+    // Handles the physical MENU gesture (hold UP on fenix7) - opens the
+    // on-watch settings menu, so it doesn't conflict with logging a
+    // cigarette via SELECT/tap.
+    function onMenu() as Boolean {
+        var menu = new SmokeLessSettingsMenu();
+        WatchUi.pushView(menu, new SmokeLessSettingsMenuDelegate(menu), WatchUi.SLIDE_UP);
+        return true;
+    }
+
     private function logCigarette() as Void {
         _view.logCigarette();
 

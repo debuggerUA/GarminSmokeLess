@@ -71,6 +71,7 @@ class GarminSmokeLessView extends WatchUi.View {
         // Instruction
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(dc.getWidth() / 2, dc.getHeight() - 45, Graphics.FONT_XTINY, "Tap or press START to log", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(dc.getWidth() / 2, dc.getHeight() - 25, Graphics.FONT_XTINY, "Hold UP for settings", Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     //! Logs a cigarette and immediately redraws.

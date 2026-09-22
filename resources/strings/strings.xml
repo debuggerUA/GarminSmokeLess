@@ -2,6 +2,9 @@
     <string id="AppName">Smoke Less</string>
     <string id="MaxDailyTitle">Max Cigarettes Per Day</string>
     <string id="CooldownTitle">Cooldown Period (Minutes)</string>
+    <string id="SettingsTitle">Settings</string>
+    <string id="CurrentValueLabel">Current</string>
+    <string id="MinutesUnit">min</string>
     <string id="ComplicationLongLabel">Cigarettes Today</string>
     <string id="ComplicationShortLabel">Cigs</string>
 </strings>
