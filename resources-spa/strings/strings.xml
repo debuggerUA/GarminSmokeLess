@@ -2,12 +2,16 @@
     <string id="AppName">Fuma Menos</string>
     <string id="MaxDailyTitle">Máx. Cigarrillos al Día</string>
     <string id="CooldownTitle">Periodo de Espera (Minutos)</string>
+    <string id="SettingsTitle">Ajustes</string>
+    <string id="CurrentValueLabel">Actual</string>
+    <string id="MinutesUnit">min</string>
     <string id="ComplicationLongLabel">Cigarrillos Hoy</string>
     <string id="ComplicationShortLabel">Cigs</string>
     <string id="StatusToday">Hoy: $1$ / $2$</string>
     <string id="StatusReady">LISTO</string>
     <string id="CooldownLabel">Espera:</string>
     <string id="InstructionText">Toca o pulsa START para registrar</string>
+    <string id="SettingsInstructionText">Mantén UP para ajustes</string>
     <string id="GlanceReady">Listo</string>
     <string id="GlanceMinutesLeft">$1$ min restantes</string>
     <string id="GlanceCigsCount">Cigs: $1$</string>

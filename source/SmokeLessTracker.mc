@@ -31,6 +31,20 @@ module SmokeLessTracker {
         return (value == null) ? DEFAULT_COOLDOWN_MINUTES : value as Number;
     }
 
+    //! Persists a new daily limit. Writes through Application.Properties so the
+    //! value stays in sync with what Garmin Connect Mobile shows (see
+    //! resources/settings/settings.xml), regardless of whether it was changed
+    //! there or from the on-watch settings menu.
+    function setMaxDaily(value as Number) as Void {
+        Properties.setValue("MaxDailyCigs", value);
+    }
+
+    //! Persists a new cooldown length, in minutes. See setMaxDaily() for why
+    //! this goes through Application.Properties.
+    function setCooldownMinutes(value as Number) as Void {
+        Properties.setValue("CooldownMinutes", value);
+    }
+
     //! Stable "YYYY-MM-DD" key for the current local day, used to detect day rollover.
     (:background, :glance)
     function todayKey() as String {

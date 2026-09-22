@@ -2,12 +2,16 @@
     <string id="AppName">Менше Куріння</string>
     <string id="MaxDailyTitle">Макс. Сигарет на День</string>
     <string id="CooldownTitle">Період Очікування (Хвилини)</string>
+    <string id="SettingsTitle">Налаштування</string>
+    <string id="CurrentValueLabel">Поточне</string>
+    <string id="MinutesUnit">хв</string>
     <string id="ComplicationLongLabel">Сигарет Сьогодні</string>
     <string id="ComplicationShortLabel">Цигарки</string>
     <string id="StatusToday">Сьогодні: $1$ / $2$</string>
     <string id="StatusReady">ГОТОВО</string>
     <string id="CooldownLabel">Очікування:</string>
     <string id="InstructionText">Торкніться або натисніть START, щоб записати</string>
+    <string id="SettingsInstructionText">Утримуйте UP для налаштувань</string>
     <string id="GlanceReady">Готово</string>
     <string id="GlanceMinutesLeft">$1$ хв залишилось</string>
     <string id="GlanceCigsCount">Цигарки: $1$</string>
