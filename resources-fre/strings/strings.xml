@@ -2,12 +2,16 @@
     <string id="AppName">Fumer Moins</string>
     <string id="MaxDailyTitle">Nombre Max de Cigarettes par Jour</string>
     <string id="CooldownTitle">Délai de Récupération (Minutes)</string>
+    <string id="SettingsTitle">Paramètres</string>
+    <string id="CurrentValueLabel">Actuel</string>
+    <string id="MinutesUnit">min</string>
     <string id="ComplicationLongLabel">Cigarettes Aujourd'hui</string>
     <string id="ComplicationShortLabel">Cigs</string>
     <string id="StatusToday">Aujourd'hui : $1$ / $2$</string>
     <string id="StatusReady">PRÊT</string>
     <string id="CooldownLabel">Récupération :</string>
     <string id="InstructionText">Appuyez ou touchez START pour enregistrer</string>
+    <string id="SettingsInstructionText">Maintenez UP pour les paramètres</string>
     <string id="GlanceReady">Prêt</string>
     <string id="GlanceMinutesLeft">$1$ min restantes</string>
     <string id="GlanceCigsCount">Cigs : $1$</string>

@@ -2,12 +2,16 @@
     <string id="AppName">Weniger Rauchen</string>
     <string id="MaxDailyTitle">Max. Zigaretten pro Tag</string>
     <string id="CooldownTitle">Abklingzeit (Minuten)</string>
+    <string id="SettingsTitle">Einstellungen</string>
+    <string id="CurrentValueLabel">Aktuell</string>
+    <string id="MinutesUnit">Min</string>
     <string id="ComplicationLongLabel">Zigaretten Heute</string>
     <string id="ComplicationShortLabel">Zig.</string>
     <string id="StatusToday">Heute: $1$ / $2$</string>
     <string id="StatusReady">BEREIT</string>
     <string id="CooldownLabel">Abklingzeit:</string>
     <string id="InstructionText">Tippen oder START drücken zum Erfassen</string>
+    <string id="SettingsInstructionText">UP halten für Einstellungen</string>
     <string id="GlanceReady">Bereit</string>
     <string id="GlanceMinutesLeft">$1$ Min. übrig</string>
     <string id="GlanceCigsCount">Zig.: $1$</string>
