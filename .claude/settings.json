@@ -1,5 +1,31 @@
 {
   "model": "claude-sonnet-5",
   "effortLevel": "medium",
-  "env": {}
+  "env": {},
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code needs your attention\" with title \"Claude Code\"'"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git push *)",
+            "command": "./test.sh && echo '{\"continue\": true}' || echo '{\"continue\": false, \"stopReason\": \"Tests failed. Push blocked.\"}'",
+            "statusMessage": "Running tests before push..."
+          }
+        ]
+      }
+    ]
+  }
 }
