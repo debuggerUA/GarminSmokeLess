@@ -100,7 +100,7 @@ module SmokeLessTracker {
     function publishComplication() as Void {
         var count = getTodayCount();
         var remaining = getRemainingCooldownSeconds();
-        var status = (remaining > 0) ? Lang.format("$1$m", [(remaining / 60) + 1]) : "RDY";
+        var status = (remaining > 0) ? Lang.format("$1$m", [(remaining + 59) / 60]) : "RDY";
 
         try {
             Complications.updateComplication(COMPLICATION_ID, {
