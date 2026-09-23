@@ -2,6 +2,7 @@ import Toybox.Lang;
 import Toybox.System;
 import Toybox.Time;
 import Toybox.Time.Gregorian;
+import Toybox.Application;
 import Toybox.Application.Storage;
 import Toybox.Application.Properties;
 import Toybox.Complications;
@@ -119,7 +120,7 @@ module SmokeLessTracker {
         try {
             Complications.updateComplication(COMPLICATION_ID, {
                 :value => Lang.format("$1$ $2$", [count, status]),
-                :shortLabel => "Cigs",
+                :shortLabel => Application.loadResource(Rez.Strings.ComplicationShortLabel) as String,
             });
         } catch (ex) {
             // Complications are unsupported on this device/API level; ignore.
