@@ -52,8 +52,9 @@ class GarminSmokeLessView extends WatchUi.View {
         // Re-publish the complication whenever the cooldown crosses a minute
         // mark, so other watch faces stay in sync while this view is open
         // (the background service can't refresh that often on its own).
-        var minute = (_cachedRemaining as Number) / 60;
-        if (!(minute == _lastCooldownMinute)) {
+        var remaining = _cachedRemaining as Number;
+        var minute = (remaining > 0) ? ((remaining + 59) / 60) : 0;
+        if (!(minute == _lastCooldownMinute) || (remaining <= 0 && _lastCooldownMinute != 0)) {
             _lastCooldownMinute = minute;
             SmokeLessTracker.publishComplication();
         }
