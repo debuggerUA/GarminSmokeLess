@@ -11,6 +11,13 @@ class GarminSmokeLessView extends WatchUi.View {
     private var _timer as Timer.Timer?;
     private var _lastCooldownMinute as Number?;
 
+    // Cached per-tick values, computed once in requestUpdate() and reused by
+    // onUpdate() so a single timer tick doesn't recompute the same
+    // Storage/Properties-backed values twice.
+    private var _cachedRemaining as Number?;
+    private var _cachedTodayCount as Number?;
+    private var _cachedMaxDaily as Number?;
+
     function initialize() {
         View.initialize();
     }
@@ -18,6 +25,7 @@ class GarminSmokeLessView extends WatchUi.View {
     function onShow() as Void {
         // Refresh once a second so the cooldown timer ticks visibly.
         _lastCooldownMinute = null;
+        refreshCache();
         _timer = new Timer.Timer();
         _timer.start(method(:requestUpdate), 1000, true);
     }
@@ -29,11 +37,22 @@ class GarminSmokeLessView extends WatchUi.View {
         }
     }
 
+    //! Recomputes the cached tracker values once. Called once per timer tick
+    //! (and up front in onShow()) so onUpdate() can reuse them instead of
+    //! recomputing the same values again within the same tick.
+    function refreshCache() as Void {
+        _cachedMaxDaily = SmokeLessTracker.getMaxDaily();
+        _cachedTodayCount = SmokeLessTracker.getTodayCount();
+        _cachedRemaining = SmokeLessTracker.getRemainingCooldownSeconds();
+    }
+
     function requestUpdate() as Void {
+        refreshCache();
+
         // Re-publish the complication whenever the cooldown crosses a minute
         // mark, so other watch faces stay in sync while this view is open
         // (the background service can't refresh that often on its own).
-        var minute = SmokeLessTracker.getRemainingCooldownSeconds() / 60;
+        var minute = (_cachedRemaining as Number) / 60;
         if (!(minute == _lastCooldownMinute)) {
             _lastCooldownMinute = minute;
             SmokeLessTracker.publishComplication();
@@ -46,9 +65,16 @@ class GarminSmokeLessView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.clear();
 
-        var maxDaily = SmokeLessTracker.getMaxDaily();
-        var count = SmokeLessTracker.getTodayCount();
-        var remainingSeconds = SmokeLessTracker.getRemainingCooldownSeconds();
+        // The very first render can happen before the timer has ticked (and
+        // thus before requestUpdate() has populated the cache); populate it
+        // lazily in that case.
+        if (_cachedMaxDaily == null || _cachedTodayCount == null || _cachedRemaining == null) {
+            refreshCache();
+        }
+
+        var maxDaily = _cachedMaxDaily as Number;
+        var count = _cachedTodayCount as Number;
+        var remainingSeconds = _cachedRemaining as Number;
 
         // Today's count
         dc.setColor(count >= maxDaily ? Graphics.COLOR_RED : Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
