@@ -50,10 +50,13 @@ class GarminSmokeLessView extends WatchUi.View {
         var count = SmokeLessTracker.getTodayCount();
         var remainingSeconds = SmokeLessTracker.getRemainingCooldownSeconds();
 
-        // Today's count
+        // Today's count. Keep a generous margin from the top bezel: the
+        // round fenix7 display narrows sharply near the top, and the
+        // longest expected value ("Today: 100 / 100") is wide.
+        var topMargin = dc.getHeight() * 0.22;
         dc.setColor(count >= maxDaily ? Graphics.COLOR_RED : Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         var statusText = Lang.format(WatchUi.loadResource(Rez.Strings.StatusToday) as String, [count, maxDaily]);
-        dc.drawText(dc.getWidth() / 2, 40, Graphics.FONT_MEDIUM, statusText, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(dc.getWidth() / 2, topMargin, Graphics.FONT_MEDIUM, statusText, Graphics.TEXT_JUSTIFY_CENTER);
 
         // Cooldown status
         if (remainingSeconds <= 0) {
@@ -69,10 +72,13 @@ class GarminSmokeLessView extends WatchUi.View {
             dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2 + 10, Graphics.FONT_NUMBER_MEDIUM, timeStr, Graphics.TEXT_JUSTIFY_CENTER);
         }
 
-        // Instruction
+        // Instruction. Keep both lines well clear of the bottom bezel,
+        // where the circular mask also narrows the usable width.
+        var bottomMargin1 = dc.getHeight() * 0.23;
+        var bottomMargin2 = dc.getHeight() * 0.15;
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() - 45, Graphics.FONT_XTINY, WatchUi.loadResource(Rez.Strings.InstructionText), Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() - 25, Graphics.FONT_XTINY, WatchUi.loadResource(Rez.Strings.SettingsInstructionText), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(dc.getWidth() / 2, dc.getHeight() - bottomMargin1, Graphics.FONT_XTINY, WatchUi.loadResource(Rez.Strings.InstructionText), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(dc.getWidth() / 2, dc.getHeight() - bottomMargin2, Graphics.FONT_XTINY, WatchUi.loadResource(Rez.Strings.SettingsInstructionText), Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     //! Logs a cigarette and immediately redraws.
