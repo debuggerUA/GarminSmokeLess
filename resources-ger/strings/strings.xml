@@ -10,7 +10,7 @@
     <string id="StatusToday">Heute: $1$ / $2$</string>
     <string id="StatusReady">BEREIT</string>
     <string id="CooldownLabel">Abklingzeit:</string>
-    <string id="InstructionText">Tippen oder START drücken zum Erfassen</string>
+    <string id="InstructionText">START zum Erfassen</string>
     <string id="SettingsInstructionText">UP halten für Einstellungen</string>
     <string id="GlanceReady">Bereit</string>
     <string id="GlanceMinutesLeft">$1$ Min. übrig</string>
