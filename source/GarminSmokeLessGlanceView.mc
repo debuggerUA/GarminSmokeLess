@@ -15,7 +15,7 @@ class GarminSmokeLessGlanceView extends WatchUi.GlanceView {
 
         var statusText = WatchUi.loadResource(Rez.Strings.GlanceReady) as String;
         if (remainingSeconds > 0) {
-            statusText = Lang.format(WatchUi.loadResource(Rez.Strings.GlanceMinutesLeft) as String, [(remainingSeconds / 60) + 1]);
+            statusText = Lang.format(WatchUi.loadResource(Rez.Strings.GlanceMinutesLeft) as String, [(remainingSeconds + 59) / 60]);
         }
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
