@@ -80,7 +80,7 @@ class GarminSmokeLessView extends WatchUi.View {
         // Today's count. Keep a generous margin from the top bezel: the
         // round fenix7 display narrows sharply near the top, and the
         // longest expected value ("Today: 100 / 100") is wide.
-        var topMargin = dc.getHeight() * 0.22;
+        var topMargin = dc.getHeight() * 0.15;
         dc.setColor(count >= maxDaily ? Graphics.COLOR_RED : Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         var statusText = Lang.format(WatchUi.loadResource(Rez.Strings.StatusToday) as String, [count, maxDaily]);
         dc.drawText(dc.getWidth() / 2, topMargin, Graphics.FONT_MEDIUM, statusText, Graphics.TEXT_JUSTIFY_CENTER);
@@ -88,15 +88,15 @@ class GarminSmokeLessView extends WatchUi.View {
         // Cooldown status
         if (remainingSeconds <= 0) {
             dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2 - 10, Graphics.FONT_LARGE, WatchUi.loadResource(Rez.Strings.StatusReady), Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2, Graphics.FONT_LARGE, WatchUi.loadResource(Rez.Strings.StatusReady), Graphics.TEXT_JUSTIFY_CENTER);
         } else {
             var mins = remainingSeconds / 60;
             var secs = remainingSeconds % 60;
             var timeStr = Lang.format("$1$:$2$", [mins.format("%02d"), secs.format("%02d")]);
 
             dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2 - 20, Graphics.FONT_MEDIUM, WatchUi.loadResource(Rez.Strings.CooldownLabel), Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2 + 10, Graphics.FONT_NUMBER_MEDIUM, timeStr, Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2 - 35, Graphics.FONT_MEDIUM, WatchUi.loadResource(Rez.Strings.CooldownLabel), Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2, Graphics.FONT_NUMBER_MEDIUM, timeStr, Graphics.TEXT_JUSTIFY_CENTER);
         }
 
         // Instruction. Keep both lines well clear of the bottom bezel,

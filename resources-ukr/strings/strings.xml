@@ -10,7 +10,7 @@
     <string id="StatusToday">Сьогодні: $1$ / $2$</string>
     <string id="StatusReady">Можна</string>
     <string id="CooldownLabel">Очікування:</string>
-    <string id="InstructionText">Торкніться або натисніть START, щоб записати</string>
+    <string id="InstructionText">START для запису</string>
     <string id="SettingsInstructionText">Утримуйте UP для налаштувань</string>
     <string id="GlanceReady">Можна</string>
     <string id="GlanceMinutesLeft">$1$ хв залишилось</string>

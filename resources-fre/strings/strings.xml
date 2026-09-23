@@ -10,7 +10,7 @@
     <string id="StatusToday">Aujourd'hui : $1$ / $2$</string>
     <string id="StatusReady">PRÊT</string>
     <string id="CooldownLabel">Récupération :</string>
-    <string id="InstructionText">Appuyez ou touchez START pour enregistrer</string>
+    <string id="InstructionText">START pour enregistrer</string>
     <string id="SettingsInstructionText">Maintenez UP pour les paramètres</string>
     <string id="GlanceReady">Prêt</string>
     <string id="GlanceMinutesLeft">$1$ min restantes</string>
