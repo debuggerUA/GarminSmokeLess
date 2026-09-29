@@ -5,6 +5,7 @@ import Toybox.Time.Gregorian;
 import Toybox.Application;
 import Toybox.Application.Storage;
 import Toybox.Application.Properties;
+import Toybox.Background;
 import Toybox.Complications;
 
 //! Shared cigarette-tracking logic used by the logging view, the glance,
@@ -17,6 +18,9 @@ module SmokeLessTracker {
 
     const DEFAULT_MAX_DAILY = 10;
     const DEFAULT_COOLDOWN_MINUTES = 90;
+
+    // Connect IQ's documented minimum interval for a temporal event.
+    const BACKGROUND_REFRESH_SECONDS = 5 * 60;
 
     //! Max cigarettes/day configured by the user, with a safe fallback.
     (:background, :glance)
@@ -124,6 +128,20 @@ module SmokeLessTracker {
             });
         } catch (ex) {
             // Complications are unsupported on this device/API level; ignore.
+        }
+    }
+
+    //! (Re-)registers the background temporal event that keeps the published
+    //! complication fresh while the app isn't running. Must be called both on
+    //! app start and from within onTemporalEvent() itself - a temporal event
+    //! is one-shot until re-armed, so skipping the latter call causes the
+    //! schedule to silently stop after the first background firing.
+    (:background)
+    function scheduleBackgroundRefresh() as Void {
+        try {
+            Background.registerForTemporalEvent(new Time.Duration(BACKGROUND_REFRESH_SECONDS));
+        } catch (ex) {
+            // Background service is unsupported on this device; ignore.
         }
     }
 }

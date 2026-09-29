@@ -1,8 +1,6 @@
 import Toybox.Application;
-import Toybox.Background;
 import Toybox.Lang;
 import Toybox.System;
-import Toybox.Time;
 import Toybox.WatchUi;
 
 class GarminSmokeLessApp extends Application.AppBase {
@@ -15,12 +13,7 @@ class GarminSmokeLessApp extends Application.AppBase {
     function onStart(state as Dictionary?) as Void {
         SmokeLessTracker.checkDailyReset();
         SmokeLessTracker.publishComplication();
-
-        try {
-            Background.registerForTemporalEvent(new Time.Duration(5 * 60));
-        } catch (ex) {
-            // Background service is unsupported on this device; ignore.
-        }
+        SmokeLessTracker.scheduleBackgroundRefresh();
     }
 
     // onStop() is called when your application is exiting

@@ -14,6 +14,9 @@ class SmokeLessServiceDelegate extends System.ServiceDelegate {
     function onTemporalEvent() as Void {
         SmokeLessTracker.checkDailyReset();
         SmokeLessTracker.publishComplication();
+        // Re-arm the schedule: a temporal event is one-shot until it's
+        // re-registered here, otherwise it silently stops after this firing.
+        SmokeLessTracker.scheduleBackgroundRefresh();
         Background.exit(null);
     }
 }

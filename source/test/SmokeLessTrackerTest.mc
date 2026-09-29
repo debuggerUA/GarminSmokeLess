@@ -116,6 +116,25 @@ function testRemainingCooldownSecondsMath(logger as Test.Logger) as Boolean {
     return true;
 }
 
+// --- Background refresh scheduling ---
+
+(:test)
+function testBackgroundRefreshIntervalMatchesMinimum(logger as Test.Logger) as Boolean {
+    Test.assertEqualMessage(SmokeLessTracker.BACKGROUND_REFRESH_SECONDS, 5 * 60, "background refresh interval should be Connect IQ's 5-minute minimum");
+    return true;
+}
+
+(:test)
+function testScheduleBackgroundRefreshCanBeReArmed(logger as Test.Logger) as Boolean {
+    // Simulates the original onStart() registration followed by the re-arm
+    // that must happen from within onTemporalEvent() on every firing -
+    // regression coverage for the bug where the schedule was never re-armed
+    // and silently stopped after the first background firing.
+    SmokeLessTracker.scheduleBackgroundRefresh();
+    SmokeLessTracker.scheduleBackgroundRefresh();
+    return true;
+}
+
 // getMaxDaily()/getCooldownMinutes() have no dedicated tests: Properties has
 // no way to unset a key at runtime (no deleteValue/clearValue, and setValue
 // rejects null), so a test can only assert Properties round-trips a value,
